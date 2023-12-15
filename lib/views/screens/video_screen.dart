@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:tiktok_tutorial/constants.dart';
 import 'package:tiktok_tutorial/controllers/video_controller.dart';
 import 'package:tiktok_tutorial/views/screens/comment_screen.dart';
@@ -206,7 +207,10 @@ class VideoScreen extends StatelessWidget {
                                 Column(
                                   children: [
                                     InkWell(
-                                      onTap: () {},
+                                      onTap: () {
+                                        data.shareCount++;
+                                        Share.share(data.videoUrl);
+                                      },
                                       child: const Icon(
                                         Icons.reply,
                                         size: 40,
